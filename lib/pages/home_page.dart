@@ -12,15 +12,22 @@ class HomePage extends StatelessWidget {
           backgroundColor: Colors.grey,
         ),
       ),
-      body: ListView.builder(
-          itemCount: 10,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) => Container(
-                height: 10,
-                width: 200,
-                color: Colors.yellow[700],
-                child: Text(index.toString()),
-              )),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 100,
+            child: ListView.builder(
+                itemCount: 10,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => Container(
+                      height: 100,
+                      width: 200,
+                      color: Colors.yellow[700],
+                      child: Text(index.toString()),
+                    )),
+          )
+        ],
+      ),
     );
   }
 }
