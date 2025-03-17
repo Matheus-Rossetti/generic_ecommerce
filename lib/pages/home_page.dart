@@ -7,18 +7,20 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Drawer(),
+        backgroundColor: Colors.green,
+        leading: Drawer(
+          backgroundColor: Colors.grey,
+        ),
       ),
-      body: Column(
-        spacing: 50,
-        children: [
-          Container(
-            height: 100,
-            width: 200,
-            color: Colors.yellow[700],
-          )
-        ],
-      ),
+      body: ListView.builder(
+          itemCount: 10,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) => Container(
+                height: 10,
+                width: 200,
+                color: Colors.yellow[700],
+                child: Text(index.toString()),
+              )),
     );
   }
 }
